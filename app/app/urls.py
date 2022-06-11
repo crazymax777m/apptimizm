@@ -20,11 +20,12 @@ from rest_framework.routers import SimpleRouter
 from rental.views import CarView
 
 router = SimpleRouter()
-router.register('api/v1/car', CarView)
+router.register('api/v1/car', CarView, basename='car')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/auth/', include('djoser.urls')),
     path('api/v1/auth/', include('djoser.urls.authtoken')),
     path('api/v1/user/', include('user.urls')),
-] + router.urls
+    path('api/v1/car', include(router.urls)),
+]

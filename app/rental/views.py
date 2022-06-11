@@ -28,7 +28,7 @@ class AddCarView(APIView):
     """Add a Car to User"""
 
     def get(self, request, pk=None, car_pk=None):
-        user = User.objects.all()
+        user = User.objects.get(pk=pk)
         car = Car.objects.get(pk=car_pk)
         user.cars.add(car)
         serializer = UserDetailSerializer(user)
@@ -39,7 +39,7 @@ class DeleteCarView(APIView):
     """Delete a Car from User"""
 
     def get(self, request, pk=None, car_pk=None):
-        user = User.objects.all()
+        user = User.objects.get(pk=pk)
         car = Car.objects.get(pk=car_pk)
         user.cars.remove(car)
         serializer = UserDetailSerializer(user)

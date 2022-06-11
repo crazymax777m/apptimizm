@@ -13,7 +13,7 @@ user_detail = UserView.as_view(
 )
 
 urlpatterns = [
-    # user url
+    # users list url
     path('', UserView.as_view({'get': 'list'})),
     # user detail url
     path('<int:pk>/', user_detail, name='user_detail'),
