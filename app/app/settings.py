@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     # API
     'rest_framework',
     # Authentication
-    'rest_framework.authtoken',
     'djoser',
+    'rest_framework.authtoken',
     # My apps
     'rental',
     'user',
